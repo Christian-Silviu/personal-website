@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+.nav-bar {
+  display: flex;
+  justify-content: right;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 5px;
+  border-bottom: 3px solid silver;
+}
+
+.nav-item {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #2d2a26;
+  padding: 1rem 1rem;
+  transition: color 0.25s ease;
+}
+
+.nav-item:hover {
+  padding: 1rem 1rem;
+  color: #fdfaf6;
+  border-radius: 12px;
+  background-color: #e0793c;
+  transition: color 0.25s ease, background-color 0.25s ease;
+}

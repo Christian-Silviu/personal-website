@@ -1,11 +1,22 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import "./Nav.css"
 
-export default function Nav() {
+function Nav() {
+  const items = [
+    { label: "Home", to: "/" },
+    { label: "About", to: "/about" },
+    { label: "Projects", to: "/projects" },
+  ]
+
   return (
-    <nav>
-      <Link to="/">Home </Link>
-      <Link to="/about">About </Link>
-      <Link to="/projects">Projects </Link>
+    <nav className="nav-bar">
+      {items.map((item) => (
+        <NavLink key={item.to} to={item.to} className="nav-item">
+          {item.label}
+        </NavLink>
+      ))}
     </nav>
   )
 }
+
+export default Nav
