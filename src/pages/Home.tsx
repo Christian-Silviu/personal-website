@@ -1,7 +1,10 @@
+import "./Home.css"
+
 export default function Home () {
     return (
-        <h1>
-            Home Page
-        </h1>
+        <div>
+            <h1 className="hero-name">Christian</h1>
+            <p className="hero-title">Software Engineer</p>
+        </div>
     )
 }

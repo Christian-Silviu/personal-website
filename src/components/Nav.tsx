@@ -4,8 +4,8 @@ import "./Nav.css"
 function Nav() {
   const items = [
     { label: "Home", to: "/" },
-    { label: "About", to: "/about" },
     { label: "Projects", to: "/projects" },
+    { label: "Contact", to: "/contact" },
   ]
 
   return (
