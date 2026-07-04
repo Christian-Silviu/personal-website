@@ -1,12 +1,35 @@
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 4rem;
+}
+
 .hero-name {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
-  color: #2e2a3d;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: #2e2a3d;
 }
 
 .hero-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
-  color: #8b5cf6;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #8b5cf6;
+    }
+
+.profile-photo {
+    width: clamp(150px, 20vw, 350px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+}
+
+.image-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transform: translate(-50%, 30%);
 }
