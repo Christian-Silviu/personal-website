@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   const items = [
     { label: "Home", to: "/" },
     { label: "Projects", to: "/projects" },
     { label: "Contact", to: "/contact" },
-  ]
+  ];
 
   return (
     <nav className="flex items-center justify-center gap-4 w-fit mx-auto mt-6 p-2 rounded-full bg-[#f9f9fb] border border-[#e6e1f5] shadow-sm">
@@ -20,7 +20,7 @@ function Nav() {
         </NavLink>
       ))}
     </nav>
-  )
+  );
 }
 
-export default Nav
+export default Nav;
