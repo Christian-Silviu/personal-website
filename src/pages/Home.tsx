@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { aboutInfo } from "../data/about";
 
+const languageIcons: Record<string, string> = {
+  Python: "/icons/python.svg",
+  "JavaScript/TypeScript": "/icons/typescript.svg",
+  "C#": "/icons/csharp.svg",
+};
+
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -61,7 +67,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-2">
             <img
               src="/images/zoomed_DSC_0597.JPG"
-              alt="Raiden Cross smiling at his college graduation"
+              alt="Me smiling at my college graduation"
               className="w-[clamp(175px,22.5vw,400px)] aspect-square rounded-full object-cover"
             />
             <p>(Me)</p>
@@ -94,7 +100,39 @@ export default function Home() {
         <h2 className="text-3xl font-semibold text-[#2e2a3d] mb-4">
           Who am I?
         </h2>
-        <p className="text-base text-[#2e2a3d] leading-relaxed">About me.</p>
+        <p className="text-base text-[#2e2a3d] leading-relaxed">
+          {aboutInfo.bio}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8 text-left">
+          <div className="text-center md:pr-4">
+            <h3 className="text-lg font-semibold text-[#8b5cf6] mb-3">
+              Languages
+            </h3>
+            {aboutInfo.coding_languages.map((lang) => (
+              <p
+                key={lang}
+                className="mb-2 flex items-center justify-center gap-2"
+              >
+                {languageIcons[lang] && (
+                  <img
+                    src={languageIcons[lang]}
+                    alt={lang}
+                    className="w-5 h-5"
+                  />
+                )}
+                {lang}
+              </p>
+            ))}
+          </div>
+          <div className="text-center md:pl-4">
+            <h3 className="text-lg font-semibold text-[#8b5cf6] mb-3">About</h3>
+            {aboutInfo.info.map((about) => (
+              <p key={about} className="mb-2">
+                {about}
+              </p>
+            ))}
+          </div>
+        </div>
       </section>
     </div>
   );
