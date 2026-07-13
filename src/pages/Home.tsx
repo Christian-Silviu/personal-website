@@ -1,9 +1,26 @@
+import { useState, useEffect } from "react";
 import { aboutInfo } from "../data/about";
 
 export default function Home() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
-      <div className="flex justify-center items-center min-h-screen px-6">
+      <div className="flex justify-center items-center min-h-screen px-6 relative">
         <div className="flex flex-row items-center gap-84 -mt-36">
           <div className="flex flex-col items-center text-center">
             <h1
@@ -49,6 +66,27 @@ export default function Home() {
             />
             <p>(Me)</p>
           </div>
+        </div>
+
+        <div
+          className={`fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce transition-opacity duration-300 ${
+            scrolled ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#8b5cf6"
+            strokeWidth="2"
+          >
+            <path
+              d="M6 9l6 6 6-6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </div>
       </div>
 
