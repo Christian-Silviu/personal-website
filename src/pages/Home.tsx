@@ -17,6 +17,13 @@ const infoIcons = [
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
+  const [time, setTime] = useState(new Date());
+  const torontoTime = time.toLocaleTimeString("en-US", {
+    timeZone: "America/Toronto",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,6 +37,13 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    const exactTime = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+    return () => clearInterval(exactTime);
   }, []);
 
   return (
@@ -154,6 +168,9 @@ export default function Home() {
           </p>
         </div>
       </section>
+      <div className="fixed bottom-8 left-8 bg-[#ede9fb] text-[#2e2a3d] px-4 py-2 rounded-full shadow-sm text-sm font-medium">
+        Toronto - {torontoTime}
+      </div>
     </div>
   );
 }
