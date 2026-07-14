@@ -111,7 +111,7 @@ export default function Home() {
         <p className="text-base text-[#2e2a3d] leading-relaxed">
           {aboutInfo.bio}
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12 text-left">
           <div className="text-center md:pr-4">
             <h3 className="text-lg font-semibold text-[#8b5cf6] mb-3">
               Languages
@@ -144,6 +144,14 @@ export default function Home() {
               </p>
             ))}
           </div>
+        </div>
+        <div className="mt-8">
+          <p className="text-base text-[#2e2a3d] leading-relaxed">
+            Outside of coding, you'll usually find me on a tennis court or
+            watching a good movie. I might even add a Letterboxd-esque page with
+            my rankings in the future. If you're looking for someone who enjoys
+            both building things and learning constantly, let's talk.
+          </p>
         </div>
       </section>
     </div>
