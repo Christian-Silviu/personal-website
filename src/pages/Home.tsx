@@ -1,11 +1,19 @@
 import { useState, useEffect } from "react";
 import { aboutInfo } from "../data/about";
+import { Cake, MapPin, School, BookOpen } from "lucide-react";
 
 const languageIcons: Record<string, string> = {
   Python: "/icons/python.svg",
   "JavaScript/TypeScript": "/icons/typescript.svg",
   "C#": "/icons/csharp.svg",
 };
+
+const infoIcons = [
+  <Cake size={20} color="#8b5cf6" />,
+  <MapPin size={20} color="#8b5cf6" />,
+  <School size={20} color="#8b5cf6" />,
+  <BookOpen size={20} color="#8b5cf6" />,
+];
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,7 +34,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex justify-center items-center min-h-screen px-6 relative">
+      <div className="flex justify-center items-center min-h-[85vh] px-6 relative">
         <div className="flex flex-row items-center gap-84 -mt-36">
           <div className="flex flex-col items-center text-center">
             <h1
@@ -126,8 +134,12 @@ export default function Home() {
           </div>
           <div className="text-center md:pl-4">
             <h3 className="text-lg font-semibold text-[#8b5cf6] mb-3">About</h3>
-            {aboutInfo.info.map((about) => (
-              <p key={about} className="mb-2">
+            {aboutInfo.info.map((about, i) => (
+              <p
+                key={about}
+                className="mb-2 flex items-start justify-center gap-2"
+              >
+                {infoIcons[i]}
                 {about}
               </p>
             ))}

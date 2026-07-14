@@ -15,6 +15,6 @@ export const aboutInfo: AboutInfo = {
     "22 Years Old",
     "Toronto, Canada",
     "University of Toronto",
-    "HBSc | Mathematics & Computer Science",
+    "HBSc | Mathematics & CS",
   ],
 };
