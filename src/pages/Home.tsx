@@ -8,6 +8,12 @@ const languageIcons: Record<string, string> = {
   "C#": "/icons/csharp.svg",
 };
 
+const languageColours: Record<string, string> = {
+  Python: "#eab308",
+  "JavaScript/TypeScript": "#3b82f6",
+  "C#": "#8b5cf6",
+};
+
 const infoIcons = [
   <Cake size={20} color="#8b5cf6" />,
   <MapPin size={20} color="#8b5cf6" />,
@@ -49,7 +55,7 @@ export default function Home() {
   return (
     <div>
       <div className="flex justify-center items-center min-h-[85vh] px-6 relative">
-        <div className="flex flex-row items-center gap-84 -mt-36">
+        <div className="flex flex-row items-center gap-84">
           <div className="flex flex-col items-center text-center">
             <h1
               className="font-semibold text-6xl text-[#2e2a3d] overflow-hidden whitespace-nowrap border-r-[3px] border-[#8b5cf6] w-0"
@@ -118,7 +124,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="px-6 py-16 max-w-3xl mx-auto text-center">
+      <section className="px-6 py-16 pb-[23vh] max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-semibold text-[#2e2a3d] mb-4">
           Who am I?
         </h2>
@@ -142,7 +148,7 @@ export default function Home() {
                     className="w-5 h-5"
                   />
                 )}
-                {lang}
+                <span style={{ color: languageColours[lang] }}>{lang}</span>
               </p>
             ))}
           </div>
