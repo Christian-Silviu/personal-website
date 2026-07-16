@@ -20,7 +20,13 @@ export default function Contact() {
   }, []);
 
   if (state.succeeded) {
-    return <p>Thanks for reaching out!</p>;
+    return (
+      <div className="min-h-[50vh] flex items-center justify-center px-6">
+        <p className="text-3xl font-semibold text-[#2e2a3d] text-center">
+          Thanks for reaching out!
+        </p>
+      </div>
+    );
   }
 
   return (
