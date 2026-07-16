@@ -167,10 +167,7 @@ export default function Home() {
         </div>
         <div className="mt-8">
           <p className="text-base text-[#2e2a3d] leading-relaxed">
-            Outside of coding, you'll usually find me on a tennis court or
-            watching a good movie. I might even add a Letterboxd-esque page with
-            my rankings in the future. If you're looking for someone who enjoys
-            both building things and learning constantly, let's talk.
+            {aboutInfo.sec_bio}
           </p>
         </div>
       </section>
