@@ -19,16 +19,6 @@ export default function Contact() {
     return () => clearInterval(exactTime);
   }, []);
 
-  if (state.succeeded) {
-    return (
-      <div className="min-h-[50vh] flex items-center justify-center px-6">
-        <p className="text-3xl font-semibold text-[#2e2a3d] text-center">
-          Thanks for reaching out!
-        </p>
-      </div>
-    );
-  }
-
   return (
     <section className="px-6 py-24">
       <h1 className="text-6xl font-bold text-[#2e2a3d] mb-20">
@@ -73,77 +63,87 @@ export default function Contact() {
           </p>
           <div className="max-w-xl pt-3">
             {/* Remember this div */}
-            <form onSubmit={handleSubmit}>
-              <div className="mb-8">
-                <label
-                  htmlFor="name"
-                  className="text-xs tracking-widest text-[#8b5cf6]"
-                >
-                  「NAME」
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  required
-                  className="w-full bg-transparent border-b border-[#2e2a3d]/30 py-2 text-[#2e2a3d] focus:outline-none focus:border-[#8b5cf6] transition-colors"
-                />
-                <ValidationError
-                  prefix="Name"
-                  field="name"
-                  errors={state.errors}
-                />
+            {state.succeeded ? (
+              <div className="py-8">
+                <p className="text-xl font-semibold text-[#2e2a3d]">
+                  Thanks for reaching out.
+                  <br />
+                  I'll get back to you as soon as I can.
+                </p>
               </div>
-              <div className="mb-8">
-                <label
-                  htmlFor="email"
-                  className="text-xs tracking-widest text-[#8b5cf6]"
-                >
-                  「EMAIL ADDRESS」
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full bg-transparent border-b border-[#2e2a3d]/30 py-2 text-[#2e2a3d] focus:outline-none focus:border-[#8b5cf6] transition-colors"
-                />
-                <ValidationError
-                  prefix="Email"
-                  field="email"
-                  errors={state.errors}
-                />
-              </div>
-              <div className="mb-8">
-                <label
-                  htmlFor="message"
-                  className="text-xs tracking-widest text-[#8b5cf6]"
-                >
-                  「MESSAGE」
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={1}
-                  className="w-full bg-transparent border-b border-[#2e2a3d]/30 py-2 text-[#2e2a3d] resize-none focus:outline-none focus:border-[#8b5cf6] transition-colors"
-                />
-                <ValidationError
-                  prefix="Message"
-                  field="message"
-                  errors={state.errors}
-                />
-              </div>
-              <div className="max-w-28 bg-transparent items-center justify-center flex border-2 border-[#8b5cf6] shadow-lg hover:bg-[#8b5cf6] text-[#8b5cf6] hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
-                <button
-                  type="submit"
-                  disabled={state.submitting}
-                  className="px-4 py-1.5 w-full disabled:opacity-50"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="mb-8">
+                  <label
+                    htmlFor="name"
+                    className="text-xs tracking-widest text-[#8b5cf6]"
+                  >
+                    「NAME」
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full bg-transparent border-b border-[#2e2a3d]/30 py-2 text-[#2e2a3d] focus:outline-none focus:border-[#8b5cf6] transition-colors"
+                  />
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
+                  />
+                </div>
+                <div className="mb-8">
+                  <label
+                    htmlFor="email"
+                    className="text-xs tracking-widest text-[#8b5cf6]"
+                  >
+                    「EMAIL ADDRESS」
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full bg-transparent border-b border-[#2e2a3d]/30 py-2 text-[#2e2a3d] focus:outline-none focus:border-[#8b5cf6] transition-colors"
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                  />
+                </div>
+                <div className="mb-8">
+                  <label
+                    htmlFor="message"
+                    className="text-xs tracking-widest text-[#8b5cf6]"
+                  >
+                    「MESSAGE」
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={1}
+                    className="w-full bg-transparent border-b border-[#2e2a3d]/30 py-2 text-[#2e2a3d] resize-none focus:outline-none focus:border-[#8b5cf6] transition-colors"
+                  />
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                  />
+                </div>
+                <div className="max-w-28 bg-transparent items-center justify-center flex border-2 border-[#8b5cf6] shadow-lg hover:bg-[#8b5cf6] text-[#8b5cf6] hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="px-4 py-1.5 w-full disabled:opacity-50"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </div>
