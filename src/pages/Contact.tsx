@@ -1,23 +1,10 @@
-import { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { MailIcon } from "lucide-react";
+import { useTorontoClock } from "../hooks/useTorontoClock";
 
 export default function Contact() {
   const [state, handleSubmit] = useForm("xwvgpzoa");
-  const [time, setTime] = useState(new Date());
-  const torontoTime = time.toLocaleTimeString("en-US", {
-    timeZone: "America/Toronto",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
-
-  useEffect(() => {
-    const exactTime = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(exactTime);
-  }, []);
+  const torontoTime = useTorontoClock();
 
   return (
     <section className="px-6 py-24">

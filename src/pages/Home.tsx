@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { aboutInfo } from "../data/about";
 import { Cake, MapPin, School, BookOpen } from "lucide-react";
+import { useTorontoClock } from "../hooks/useTorontoClock";
 
 const languageIcons: Record<string, string> = {
   Python: "/icons/python.svg",
@@ -23,13 +24,7 @@ const infoIcons = [
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
-  const [time, setTime] = useState(new Date());
-  const torontoTime = time.toLocaleTimeString("en-US", {
-    timeZone: "America/Toronto",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  });
+  const torontoTime = useTorontoClock();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,13 +38,6 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    const exactTime = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(exactTime);
   }, []);
 
   return (
