@@ -42,11 +42,11 @@ export default function Home() {
 
   return (
     <div>
-      <div className="flex justify-center items-center min-h-[85vh] px-6 relative">
-        <div className="flex flex-row items-center gap-84">
+      <div className="flex justify-center items-center min-h-[85dvh] px-6 py-12 relative">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-[clamp(2rem,12vw,21rem)] xl:gap-84">
           <div className="flex flex-col items-center text-center">
             <h1
-              className="font-semibold text-6xl text-[#2e2a3d] overflow-hidden whitespace-nowrap border-r-[3px] border-[#8b5cf6] w-0"
+              className="font-semibold text-[clamp(1.9rem,8.5vw,3.75rem)] leading-tight text-[#2e2a3d] overflow-hidden whitespace-nowrap border-r-[3px] border-[#8b5cf6] w-0"
               style={{
                 animation:
                   "typing 1.5s steps(20, end) forwards, blink 0.75s step-end infinite",
@@ -84,7 +84,7 @@ export default function Home() {
             <img
               src="/images/zoomed_DSC_0597.JPG"
               alt="Me smiling at my college graduation"
-              className="w-[clamp(175px,22.5vw,400px)] aspect-square rounded-full object-cover"
+              className="w-[clamp(175px,22.5vw,400px)] max-w-[80vw] aspect-square rounded-full object-cover"
             />
             <p>(Me)</p>
           </div>
