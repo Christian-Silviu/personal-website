@@ -30,7 +30,7 @@ export const projects: Project[] = [
     tagline: "Calendar scheduler.",
     description:
       "An AI-powered full-stack calendar assistant that schedules Google Calendar events from natural language.",
-    stack: ["React", "JavaScript", "Vite"],
+    stack: ["React", "JavaScript", "Vite", "Python", "Fast API"],
     image: "/images/calendula_image.png",
     repo: "https://github.com/Christian-Silviu/calendar-assistant",
     status: "2026",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
     title: "Cinedle",
     tagline: "Movie guessing game.",
     description: "An early project Wordle-esque movie guessing game I made.",
-    stack: ["React", "JavaScript", "Vite"],
+    stack: ["React", "JavaScript", "Vite", "Python"],
     image: "/images/cinedle_image.png",
     live: "https://www.cinedle.org/",
     status: "2026",
