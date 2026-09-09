@@ -17,9 +17,32 @@ export const projects: Project[] = [
     title: "Personal Website",
     tagline: "The site you're on right now.",
     description:
-      "A single-page portfolio built from scratch with React Router, Tailwind, and Vite. Content lives in typed data files so adding a project or editing a bio is a one-object change, and small touches like the typewriter intro and the live Toronto clock are hand-rolled rather than pulled from a library.",
+      "A personal portfolio website built from scratch with React Router, Tailwind, and Vite.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    image: "/images/website_profile_img.png",
     repo: "https://github.com/Christian-Silviu/personal-website",
+    live: "https://www.christiancaunei.com/",
+    status: "2026",
+  },
+  {
+    slug: "calendula",
+    title: "Calendula",
+    tagline: "Calendar scheduler.",
+    description:
+      "An AI-powered full-stack calendar assistant that schedules Google Calendar events from natural language.",
+    stack: ["React", "JavaScript", "Vite"],
+    image: "/images/calendula_image.png",
+    repo: "https://github.com/Christian-Silviu/calendar-assistant",
+    status: "2026",
+  },
+  {
+    slug: "cinedle",
+    title: "Cinedle",
+    tagline: "Movie guessing game.",
+    description: "An early project Wordle-esque movie guessing game I made.",
+    stack: ["React", "JavaScript", "Vite"],
+    image: "/images/cinedle_image.png",
+    live: "https://www.cinedle.org/",
     status: "2026",
   },
 ];
